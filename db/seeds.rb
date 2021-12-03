@@ -60,7 +60,16 @@ c4.items.create(name: "Mollisols", price: 12.95, description: "Prarie and grassl
 c4.items.create(name: "Inceptisols", price: 15.95, description: "Not much clay")
 
 c5 = Category.create(name: "Fungi", description: "I don't know, some people are into this weird crap")
-c5.items.create(name: "", price: 152.95, description: "")
+c5.items.create(name: "White Button Mushrooms", price: 1.95, description: "Literally in every store")
+c5.items.create(name: "Crimini Mushrooms", price: 1.95, description: "")
+c5.items.create(name: "Portobello Mushrooms", price: 1.95, description: "")
+c5.items.create(name: "Shitake Mushrooms", price: 1.95, description: "")
+c5.items.create(name: "Oyster Mushroom", price: 1.95, description: "")
+c5.items.create(name: "Enoki Mushroom", price: 1.95, description: "")
+c5.items.create(name: "Chatnerelle Mushroom", price: 1.95, description: "")
+c5.items.create(name: "Porcini Mushrooms", price: 1.95, description: "")
+c5.items.create(name: "Shimeji Mushrooms", price: 1.95, description: "")
+c5.items.create(name: "Morel Mushroom ", price: 1.95, description: "")
 
 c6 = Category.create(name: "indoor plants", description: "Freshen up the air in your space")
 c7 = Category.create(name: "Outdoor Plants", description: "Curb appeal! Don't embarass your neighbors!")
