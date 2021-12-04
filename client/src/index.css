@@ -12,3 +12,98 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  font-size: 2.5em;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color:rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 20px;
+  position: relative;
+}
+
+.navbar_link:hover {
+  color: #1cac48;
+}
+.navbar_link:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #F1C40F;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+.navbar_link:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+.navbar_link{
+  text-decoration:none;
+  color:rgb(70, 122, 88);
+  margin:10px;
+  padding:5px;
+}
+
+.card {
+  background-color:whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  padding: 10px;
+  margin: 40px;
+}
+
+.categories_header{
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
+  padding:20px;
+  margin-left:350px;
+  margin-right:350px;
+  color:rgb(255, 255, 255);
+  font-size: 3.2em;
+  background-image: url("/src/images/grass.jpg");
+  background-size:cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.items_header{
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
+  padding:20px;
+  margin-left:200px;
+  margin-right:200px;
+  color:rgb(255, 255, 255);
+  font-size: 3.2em;
+  background-image: url("/src/images/plants.jpg");
+  background-size:cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.add_button{
+  font-size:1.5em;
+  color:rgb(255, 255, 255);
+  background-color:rgb(60, 93, 65);
+  margin-bottom:20px;
+}
+
+.button{
+  color:rgb(255, 255, 255);
+  background-color:rgb(60, 93, 65);
+  margin:10px;
+
+}
+
+.link{
+  text-decoration: none;
+  color:white;
+}
+ 

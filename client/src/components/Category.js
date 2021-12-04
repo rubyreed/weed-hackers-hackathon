@@ -13,17 +13,19 @@ const Category = (props) => {
 
 
   return(
-    <div>
+    <div className = "card">
       <h1>Category</h1>
-      <p>ID: </p>
+      <p>ID: {id}</p>
       <p>Name: {name}</p>
       <p>Description: {description}</p>
-      <Link to={`/categories/${id}/items`}>View</Link>
-      <button onClick = {toggleUpdateForm}>
+      <button className = "button">
+        <Link className = "link" to={`/categories/${id}/items`}>View</Link>
+        </button>
+      <button className = "button" onClick = {toggleUpdateForm}>
         {showUpdateForm ? "Cancel" : "Update"}
       </button>
       {showUpdateForm && <CategoryForm id = {id} name = {name} description = {description} updateCategory = {updateCategory} deleteCategory={deleteCategory}/>}
-    <button onClick={() => deleteCategory(id)}>Delete</button>
+    <button className = "button" onClick={() => deleteCategory(id)}>Delete</button>
     </div>
   );
 };

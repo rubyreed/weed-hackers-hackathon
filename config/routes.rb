@@ -6,4 +6,5 @@ namespace :api do
   end
   resources :jobs
 end
+  resources :articles
 end
