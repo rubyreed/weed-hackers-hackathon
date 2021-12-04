@@ -58,10 +58,10 @@ const Items = () => {
 
   return (
     <div>
-      <h1>Category: {category.name}</h1>
+      <h1 className = "items_header">Category: {category.name}</h1>
       {renderItems()}
       {showNewForm && <ItemForm addItem={addItem} toggleForm={toggleForm}/>}
-      {showNewForm == false && <button onClick={()=>toggleForm()}>{showNewForm ? "Cancel" : "Add Item"}</button>}
+      {showNewForm == false && <button button className="add_button" onClick={()=>toggleForm()}>{showNewForm ? "Cancel" : "Add Item"}</button>}
     </div>
   );
 };
