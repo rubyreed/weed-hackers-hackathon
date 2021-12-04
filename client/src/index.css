@@ -63,7 +63,6 @@ code {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   padding: 10px;
   margin: 40px;
-  
 }
 
 .categories_header{
@@ -77,11 +76,34 @@ code {
   background-size:cover;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
+.items_header{
+  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
+  padding:20px;
+  margin-left:200px;
+  margin-right:200px;
+  color:rgb(255, 255, 255);
+  font-size: 3.2em;
+  background-image: url("/src/images/plants.jpg");
+  background-size:cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
 
 .add_button{
   font-size:1.5em;
   color:rgb(255, 255, 255);
   background-color:rgb(60, 93, 65);
   margin-bottom:20px;
+}
+
+.button{
+  color:rgb(255, 255, 255);
+  background-color:rgb(60, 93, 65);
+  margin:10px;
+
+}
+
+.link{
+  text-decoration: none;
+  color:white;
 }
  

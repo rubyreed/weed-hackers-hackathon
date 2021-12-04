@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Item = (props) => {
   const { item, category, deleteItem } = props
   return (
-    <div>
+    <div className = "card">
       <h3>{item.name}</h3>
       <p>{item.price}</p>
       <p>{item.description}</p>

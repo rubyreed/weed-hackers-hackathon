@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'database_cleaner'
+require 'faker'
 DatabaseCleaner.clean_with(:truncation)
 
 
@@ -141,4 +142,16 @@ Job.create(title: "Counter Person", company: "Fabulous Florals", salary: 15550)
 Job.create(title: "Flower Salesman", company: "Flowers and Rocks", salary: 25450)
 Job.create(title: "Shop layout designer", company: "Professional Garden Designs", salary: 18850)
 
+10.times do
+Article.create(author:Faker::Name.name,title: Faker::Book.title, body: Faker::Fantasy::Tolkien.poem) 
+end
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
+# Article.create(title: "", author: "", body: "")
 
