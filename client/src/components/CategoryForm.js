@@ -2,35 +2,37 @@ import React, {useState} from "react";
 import axios from "axios";
 
 const CategoryForm = (props) => {
-  const {newestCategory} = props
+  const {id, newestCategory, updateCategory, name: initialName, description: initialDescription} = props
 
-  const[nameState, setNameState] = useState("");
-  const[priceState, setPriceState] = useState("");
-  const[descriptionState, setDescriptionState] = useState("");
+  const[nameState, setNameState] = useState(initialName ? initialName : "");
+  const[descriptionState, setDescriptionState] = useState(initialDescription ? initialDescription : "");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    constNewCategory={name: nameState, price: priceState, description: descriptionState};
+    const newCategory={name: nameState, description: descriptionState};
 
+    if (id) {
+      let response = await axios.put (`/api/categories/${id}`, newCategory);
+      updateCategory(response.data);
+    }
+    else {
     let response = await axios.post("/api/categories", newCategory);
     newestCategory(response.data)
+    };
   };
 
   return(
     <div>
-      <h1>Add/Edit Category</h1>
+      <h1>{id ? "Update" : "New"} Category Form</h1>
       <form onSubmit={handleSubmit}>
       <p>Name:</p>
         <input value = {nameState} onChange = {(e) =>
         setNameState(e.target.value)}/>
-        <p>Price:</p>
-        <input value = {priceState} onChange = {(e) =>
-        setPriceState(e.target.value)}/>
         <p>Description:</p>
-        <input value = {nameDescription} onChange = {(e) =>
+        <input value = {descriptionState} onChange = {(e) =>
         setDescriptionState(e.target.value)}/>
         <br/>
-        <button>Click to Add New Category</button>
+        <button>{id ? "Update" : "Create"}</button>
       </form>
     </div>
   );
