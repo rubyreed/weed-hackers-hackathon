@@ -17,8 +17,7 @@ const Category = (props) => {
       <p>ID: </p>
       <p>Name: {name}</p>
       <p>Description: {description}</p>
-      {/* work on this with Mike later to link up items
-      <Link to={`/categories/${id}`}>View</Link> */}
+      <Link to={`/categories/${id}/items`}>View</Link>
       <button onClick = {toggleForm}>
         {showForm ? "Cancel" : "Update"}
       </button>
