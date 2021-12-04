@@ -47,10 +47,10 @@ const displayNewJob = (job) => {
 
 return (
   <div>
-    <h1>Jobs Here</h1>
-    <button onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add"}</button> 
-    {showNewForm && <JobForm newestJob = {displayNewJob} updateJob = {updateJob}/>}
+    <h1 className = "jobs_header">Jobs</h1>
     {renderJobs()}
+    <button className="add_button" onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add"}</button> 
+    {showNewForm && <JobForm newestJob = {displayNewJob} updateJob = {updateJob}/>}
   </div>
 );
 };

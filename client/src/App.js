@@ -34,6 +34,7 @@ function App() {
       <Route path = "/categories/:category_id/items/:id" element = {<ItemShow />}/>
       <Route path = "/categories/:category_id/items/:id/edit" element = {<ItemForm />}/>
       </Routes>
+      <footer styleName="footer">© Copyright 2021 DPL WeedHackers</footer>
     </div>
   );
 }

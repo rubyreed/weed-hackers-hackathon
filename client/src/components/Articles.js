@@ -12,12 +12,26 @@ const Articles = () => {
   const getArticles = async () => {
     let res = await axios.get("/api/articles");
     setArticles(res.data)
-    console.log(res.data)
   };
 
+  const renderArticles = () => {
+    if (articles.length === 0) {
+      return <p>No Articles</p>
+    }
+    return articles.map((article) => {
+      return (
+        <div>
+          <h2> Title: {article.title}</h2>
+          <h3> Author: {article.author}</h3>
+          <h4>Body: {article.body}</h4>
+        </div>
+      )
+    });
+  };
+  
   return (
     <div>
-      <p> {articles.title}</p>
+      <p> {renderArticles()}</p>
     </div>
   )
 }
