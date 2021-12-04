@@ -5,12 +5,11 @@ const CategoryForm = (props) => {
   const {newestCategory} = props
 
   const[nameState, setNameState] = useState("");
-  const[priceState, setPriceState] = useState("");
   const[descriptionState, setDescriptionState] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    constNewCategory={name: nameState, price: priceState, description: descriptionState};
+    const newCategory={name: nameState, description: descriptionState};
 
     let response = await axios.post("/api/categories", newCategory);
     newestCategory(response.data)
@@ -23,11 +22,8 @@ const CategoryForm = (props) => {
       <p>Name:</p>
         <input value = {nameState} onChange = {(e) =>
         setNameState(e.target.value)}/>
-        <p>Price:</p>
-        <input value = {priceState} onChange = {(e) =>
-        setPriceState(e.target.value)}/>
         <p>Description:</p>
-        <input value = {nameDescription} onChange = {(e) =>
+        <input value = {descriptionState} onChange = {(e) =>
         setDescriptionState(e.target.value)}/>
         <br/>
         <button>Click to Add New Category</button>
