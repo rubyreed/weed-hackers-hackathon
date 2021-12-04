@@ -1,33 +1,31 @@
-import react from 'react';
-import axios from 'axios';
-import React, { useEffect, useState } from "react";
-  
-const Job = () => {
-  const params = useParams();
-  const [jobs, setJob] = useState({});
-   
-  useEffect(() => {
-      getJob();
-    }, []);
-    
-    const getJob = async () => {
-        let res = await axios.get(`/api/jobs/${params.id}`);
-        setJob(res.data);
-      } 
-    };
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
+import JobForm from "./JobForm";
 
-    const renderJobs = () => {
-      return jobs.map =((job)=>{
-        
-      })
-    }
+const Job = (props) => {
+  const {id, title, company, salary, updateJob} = props
 
-    return (
-      <div> 
-        <p> Welcome to the Jobs page! </p>
-        <h2> Add Job Toggle here </h2>
+  const [showForm, setShowForm] = useState(false);
 
-      </div>
-    );
+  const toggleForm = () => {
+    setShowForm(!showForm);
   };
+
+  return(
+    <div>
+      <h1>Job</h1>
+      <p>ID:{id} </p>
+      <p>Title: {title}</p>
+      <p>Company: {company}</p>
+      <p>Salary: {salary}</p>
+      {/* work on this with Mike later to link up items
+      <Link to={`/categories/${id}`}>View</Link> */}
+      <button onClick = {toggleForm}>
+        {showForm ? "Cancel" : "Update"}
+      </button>
+      {showForm && <JobForm id = {id} title = {title} company = {company} salary={salary} updateJob = {updateJob}/>}
+    </div>
+  );
+};
+
 export default Job;
