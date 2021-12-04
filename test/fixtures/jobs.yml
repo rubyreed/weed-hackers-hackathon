@@ -2,8 +2,10 @@
 
 one:
   title: MyString
-  salary: 1.5
+  company: MyString
+  salary: 1
 
 two:
   title: MyString
-  salary: 1.5
+  company: MyString
+  salary: 1

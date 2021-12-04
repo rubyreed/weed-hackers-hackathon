@@ -34,7 +34,6 @@ c2.items.create(name: "Carnations", price: 14.95, description: "If you don't kno
 c2.items.create(name: "Lace flower", price: 12.95, description: "flower that looks like it's made out of lace -not original name")
 c2.items.create(name: "Large-flowered Tickseed", price: 12.95, description: "big version of small-flowered tickseed probably")
 
-
 c3 = Category.create(name: "Trees", description: "Leave your mark on the land")
 c3.items.create(name: "Apple Tree", price: 112.95, description: "grows apples dummy")
 c3.items.create(name: "Pear Tree", price: 122.95, description: "Do I really need to explain this?")
@@ -131,13 +130,15 @@ c10.items.create(name: "Decorative Fake Tree", price: 49.95, description: "6ft t
 c10.items.create(name: "Fake Rock", price: 5.95, description: "5in long. 2lbs")
 c10.items.create(name: "Decorative American Flag", price: 19.95, description: "For 3in diameter poles")
 
-Job.create(title: "Lead Gardener", salary: 25.50)
-Job.create(title: "Laborer", salary: 15.50)
-Job.create(title: "Sr. Botonist", salary: 57.75)
-Job.create(title: "Asst. Bottonist", salary: 32.50)
-Job.create(title: "Florist", salary: 22.50)
-Job.create(title: "Lady Bug Placer", salary: 17.50)
-Job.create(title: "Trimmer", salary: 21.50)
-Job.create(title: "Counter Person", salary: 15.50)
-Job.create(title: "Flower Salesman", salary: 25.50)
-Job.create(title: "Shop layout designer", salary: 18.50)
+Job.create(title: "Lead Gardener", company: "Greenways Greenhouse", salary: 25000)
+Job.create(title: "Laborer", company: "Gardens Galore", salary: 15456)
+Job.create(title: "Sr. Botonist", company: "Botanists 'R Us", salary: 57725)
+Job.create(title: "Asst. Bottonist", company: "Botanists 'R Us", salary: 32850)
+Job.create(title: "Florist", company: "Fabulous Florals", salary: 28950)
+Job.create(title: "Lady Bug Placer", company: "Goodbye Pests Ltd.", salary: 17120)
+Job.create(title: "Trimmer", company: "Hide your neighbor hedges", salary: 21550)
+Job.create(title: "Counter Person", company: "Fabulous Florals", salary: 15550)
+Job.create(title: "Flower Salesman", company: "Flowers and Rocks", salary: 25450)
+Job.create(title: "Shop layout designer", company: "Professional Garden Designs", salary: 18850)
+
+
