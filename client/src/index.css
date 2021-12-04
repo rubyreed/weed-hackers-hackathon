@@ -151,8 +151,11 @@ text-shadow: 4px 4px 4px rgb(73, 190, 99);
   border:2px green;
 } */
 
+.wrapper {
+  min-height:100vh;
+}
+
 .footer{
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
