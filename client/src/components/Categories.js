@@ -47,10 +47,10 @@ const displayNewCategory = (category) => {
 
   return (
     <div>
-      <h1>Categories Here</h1>
-      <button onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add"}</button> 
-      {showNewForm && <CategoryForm newestCategory = {displayNewCategory} updateCategory = {updateCategory}/>}
+      <h1 className = "categories_header">Categories</h1>
       {renderCategories()}
+      {showNewForm && <CategoryForm newestCategory = {displayNewCategory} updateCategory = {updateCategory}/>}
+      <button className="add_button" onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add New Category"}</button> 
     </div>
   );
 };
