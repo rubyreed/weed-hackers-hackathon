@@ -5,11 +5,12 @@ import CategoryForm from "./CategoryForm";
 const Category = (props) => {
   const {id, name, description, updateCategory, deleteCategory} = props
 
-  const [showForm, setShowForm] = useState(false);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
+  const toggleUpdateForm = () => {
+    setShowUpdateForm(!showUpdateForm);
   };
+
 
   return(
     <div>
@@ -18,10 +19,10 @@ const Category = (props) => {
       <p>Name: {name}</p>
       <p>Description: {description}</p>
       <Link to={`/categories/${id}/items`}>View</Link>
-      <button onClick = {toggleForm}>
-        {showForm ? "Cancel" : "Update"}
+      <button onClick = {toggleUpdateForm}>
+        {showUpdateForm ? "Cancel" : "Update"}
       </button>
-      {showForm && <CategoryForm id = {id} name = {name} description = {description} updateCategory = {updateCategory} deleteCategory={deleteCategory}/>}
+      {showUpdateForm && <CategoryForm id = {id} name = {name} description = {description} updateCategory = {updateCategory} deleteCategory={deleteCategory}/>}
     <button onClick={() => deleteCategory(id)}>Delete</button>
     </div>
   );
