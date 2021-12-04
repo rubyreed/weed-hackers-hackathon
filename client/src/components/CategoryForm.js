@@ -23,7 +23,7 @@ const CategoryForm = (props) => {
 
   return(
     <div>
-      <h1>{id ? "Update" : "New"} Category Form</h1>
+      <h1  className="update">{id ? "Update" : "New"} Category Form</h1>
       <form onSubmit={handleSubmit}>
       <p>Name:</p>
         <input value = {nameState} onChange = {(e) =>
@@ -32,7 +32,7 @@ const CategoryForm = (props) => {
         <input value = {descriptionState} onChange = {(e) =>
         setDescriptionState(e.target.value)}/>
         <br/>
-        <button>{id ? "Update" : "Create"}</button>
+        <button className = "button">{id ? "Update" : "Create"}</button>
       </form>
     </div>
   );

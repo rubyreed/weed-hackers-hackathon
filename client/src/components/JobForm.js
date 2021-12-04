@@ -25,7 +25,7 @@ const JobForm = (props) => {
 
   return(
     <div>
-      <h1>{id ? "Update" : "New"} Job Form</h1>
+      <h1 className="update">{id ? "Update" : "New"} Job Form</h1>
       <form onSubmit={handleSubmit}>
       <p>Title:</p>
         <input value = {titleState} onChange = {(e) =>
@@ -38,7 +38,7 @@ const JobForm = (props) => {
         <input value = {salaryState} onChange = {(e) =>
         setSalaryState(e.target.value)}/>
         <br/>
-        <button>{id ? "Update" : "Create"} </button>
+        <button className="button">{id ? "Update" : "Create"} </button>
       </form>
     </div>
   );
