@@ -19,9 +19,9 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <div className="wrapper">
       <Routes>
       <Route path = "/articles" element = {<Articles />}/>
-      
       <Route path = "/" element = {<Home />}/>
       <Route path = "/about" element = {<About />}/>
       <Route path = "/categories" element = {<Categories />}/>
@@ -34,6 +34,7 @@ function App() {
       <Route path = "/categories/:category_id/items/:id" element = {<ItemShow />}/>
       <Route path = "/categories/:category_id/items/:id/edit" element = {<ItemForm />}/>
       </Routes>
+      </div>
       <footer styleName="footer">Copyright 2021 ©WeedHackers</footer>
     </div>
   );
