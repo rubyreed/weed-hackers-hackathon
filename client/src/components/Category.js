@@ -14,9 +14,8 @@ const Category = (props) => {
 
   return(
     <div className = "card">
-      <h1>Category</h1>
+      <h1>{name}</h1>
       <p>ID: {id}</p>
-      <p>Name: {name}</p>
       <p>Description: {description}</p>
       <button className = "button">
         <Link className = "link" to={`/categories/${id}/items`}>View</Link>
