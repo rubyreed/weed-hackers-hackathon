@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("/src/images/gardening_background.jpg") ;
+  background-repeat: repeat-y;
+  background-size:cover;
 }
 
 code {
@@ -102,6 +104,30 @@ code {
   text-shadow: 4px 4px 4px black;
 }
 
+.about_header{
+  padding:20px;
+  margin-left:200px;
+  margin-right:200px;
+  color:rgb(255, 255, 255);
+  font-size: 3.2em;
+  background-image: url("/src/images/hacker2.jpg");
+  background-size:cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  text-shadow: 4px 4px 4px black;
+}
+
+.about_name{
+font-size: 1.5em;
+text-shadow: 4px 4px 4px rgb(73, 190, 99);
+}
+
+.about_info{
+  background-color:whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
 .add_button{
   font-size:1.5em;
   color:rgb(255, 255, 255);
@@ -125,7 +151,32 @@ code {
   border:2px green;
 } */
 
-/* .footer{
-  
-} */
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
  
+.home{
+  padding:20px;
+  margin-left:200px;
+  margin-right:200px;
+  color:rgb(255, 255, 255);
+  font-size: 7em;
+  text-shadow: 4px 4px 4px black;
+}
+
+.home_link{
+  text-decoration: none;
+  color:white;
+  background-color:rgb(70, 122, 88);
+  font-size:3em;
+  border:3px solid rgb(255, 255, 255);
+  display:flex;
+  margin-top: 20px;
+  justify-content: center;
+  max-width: 50%;
+  margin-left:30%;
+  margin-right:30%;
+}

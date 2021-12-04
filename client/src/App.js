@@ -12,6 +12,7 @@ import JobForm from "./components/JobForm";
 import Items from "./components/Items";
 import ItemShow from "./components/ItemShow";
 import ItemForm from "./components/ItemForm";
+import Articles from "./components/Articles";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
+      <Route path = "/articles" element = {<Articles />}/>
+      
       <Route path = "/" element = {<Home />}/>
       <Route path = "/about" element = {<About />}/>
       <Route path = "/categories" element = {<Categories />}/>
@@ -31,7 +34,7 @@ function App() {
       <Route path = "/categories/:category_id/items/:id" element = {<ItemShow />}/>
       <Route path = "/categories/:category_id/items/:id/edit" element = {<ItemForm />}/>
       </Routes>
-      <footer styleName="footer">© Copyright 2021 DPL WeedHackers</footer>
+      <footer styleName="footer">Copyright 2021 ©WeedHackers</footer>
     </div>
   );
 }
