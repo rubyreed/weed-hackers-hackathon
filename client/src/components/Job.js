@@ -13,7 +13,7 @@ const Job = (props) => {
 
   return(
     <div className = "card">
-      <h2>Title: {title}</h2>
+      <h2>{title}</h2>
       <p>ID: {id}</p>
       <p>Company: {company}</p>
       <p>Salary: ${salary}</p>
