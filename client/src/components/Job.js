@@ -17,9 +17,6 @@ const Job = (props) => {
       <p>ID:{id} </p>
       <p>Company: {company}</p>
       <p>Salary: {salary}</p>
-      <button className = "button">
-      <Link className = "link" to={`/jobs/${id}/items`}>View</Link>
-      </button>
       <button className="button" onClick = {toggleForm}>
         {showUpdateForm ? "Cancel" : "Update"}
       </button>
