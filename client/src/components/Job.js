@@ -3,27 +3,27 @@ import {Link} from "react-router-dom";
 import JobForm from "./JobForm";
 
 const Job = (props) => {
-  const {id, title, company, salary, updateJob} = props
+  const {id, title, company, salary, updateJob, deleteJob} = props
 
-  const [showForm, setShowForm] = useState(false);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   const toggleForm = () => {
-    setShowForm(!showForm);
+    setShowUpdateForm(!showUpdateForm);
   };
 
   return(
     <div>
-      <h1>Job</h1>
+      <h2>Title: {title}</h2>
       <p>ID:{id} </p>
-      <p>Title: {title}</p>
       <p>Company: {company}</p>
       <p>Salary: {salary}</p>
-      {/* work on this with Mike later to link up items
-      <Link to={`/categories/${id}`}>View</Link> */}
       <button onClick = {toggleForm}>
-        {showForm ? "Cancel" : "Update"}
+        {showUpdateForm ? "Cancel" : "Update"}
       </button>
-      {showForm && <JobForm id = {id} title = {title} company = {company} salary={salary} updateJob = {updateJob}/>}
+      {showUpdateForm && <JobForm id = {id} title = {title} company = {company} salary={salary} updateJob={updateJob} deleteJob={deleteJob}/>}
+      <button onClick={() => deleteJob(id)}>Delete</button>
+      <br/>
+      <Link to={`/jobs/${id}/items`}>View</Link>
     </div>
   );
 };

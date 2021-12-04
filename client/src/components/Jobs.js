@@ -4,7 +4,7 @@ import axios from "axios";
 import JobForm from "./JobForm";
 
 const Jobs = () => {
-
+const [showNewForm, setShowNewForm] = useState(false);
 const [jobs, setJobs] = useState([]);
 
 useEffect(() => {
@@ -17,17 +17,27 @@ const getJobs = async() => {
   setJobs(response.data)
 };
 
+const toggleNewForm = () => {
+  setShowNewForm(!showNewForm);
+};
+
 const updateJob = (changedJob) => {
   let updatedJobs = jobs.map((job) => (job.id === changedJob.id ? changedJob : job));
 setJobs(updatedJobs)
 };
+
+const deleteJob = async(id)=>{
+  let response = await axios.delete(`/api/jobs/${id}`);
+  let filteredJobs = jobs.filter((job) => job.id !==id);
+  setJobs(filteredJobs);
+}
 
 const renderJobs = () => {
   if (jobs.length === 0) {
     return <p>No Jobs</p>
   }
   return jobs.map((job) => {
-    return <Job key = {job.id}{...job}/>;
+    return <Job key = {job.id}{...job} deleteJob = {deleteJob} updateJob={updateJob}/>;
   });
 };
 
@@ -35,13 +45,14 @@ const displayNewJob = (job) => {
   setJobs([job,...jobs])
 };
 
-  return (
-    <div>
-      <h1>Jobs Here</h1>
-      <JobForm newestJob = {displayNewJob} updateJob = {updateJob}/>
-      {renderJobs()}
-    </div>
-  );
+return (
+  <div>
+    <h1>Jobs Here</h1>
+    <button onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add"}</button> 
+    {showNewForm && <JobForm newestJob = {displayNewJob} updateJob = {updateJob}/>}
+    {renderJobs()}
+  </div>
+);
 };
 
 export default Jobs;
