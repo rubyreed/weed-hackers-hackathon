@@ -59,7 +59,7 @@ const ItemForm = (props) => {
   };
 
   return (
-    <div>
+    <div className="card">
       <h1>{params.category_id ? "Edit Item Form" : "Add Item Form"}</h1>
       <h3>Category: {category.name}</h3>
       <form onSubmit ={handleSubmit}>
@@ -70,8 +70,8 @@ const ItemForm = (props) => {
         <p>Description:</p>
         <input required style={{width: "50%"}} value={description} onChange={(e)=>setDescription(e.target.value)}/>
         <br  />
-        <button style ={{marginRight: "5px"}}>{params.category_id ? "Submit Edits" : "Add New Item"}</button>
-        <button onClick ={()=>{handleCancel()}}>Cancel</button>
+        <button className="button">{params.category_id ? "Submit Edits" : "Add New Item"}</button>
+        <button className ="button" onClick ={()=>{handleCancel()}}>Cancel</button>
       </form>
     </div>
   );
