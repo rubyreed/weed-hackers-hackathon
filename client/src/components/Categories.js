@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Category from "./Category";
 import axios from "axios";
+import CategoryForm from "./CategoryForm";
 
 const Categories = () => {
 
@@ -25,9 +26,14 @@ const renderCategories = () => {
   });
 };
 
+const displayNewCategory = (category) => {
+  setCategories([category,...categories])
+};
+
   return (
     <div>
       <h1>Categories Here</h1>
+      <CategoryForm newestCategory = {displayNewCategory}/>
       {renderCategories()}
     </div>
   );
