@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import ArticleForm from "./ArticleForm";
 
 
 const Articles = () => {
@@ -13,6 +14,9 @@ const Articles = () => {
     let res = await axios.get("/api/articles");
     setArticles(res.data)
   };
+  const addArticle= (newArticle)=>{
+    setArticles([newArticle, ...articles])
+  };
 
   const renderArticles = () => {
     if (articles.length === 0) {
@@ -20,7 +24,7 @@ const Articles = () => {
     }
     return articles.map((article) => {
       return (
-        <div>
+        <div className="card">
           <h2> Title: {article.title}</h2>
           <h3> Author: {article.author}</h3>
           <h4>Body: {article.body}</h4>
@@ -31,6 +35,7 @@ const Articles = () => {
   
   return (
     <div>
+      <ArticleForm addArticle={addArticle}/>
       <p> {renderArticles()}</p>
     </div>
   )
