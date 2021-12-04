@@ -12,6 +12,7 @@ import JobForm from "./components/JobForm";
 import Items from "./components/Items";
 import ItemShow from "./components/ItemShow";
 import ItemForm from "./components/ItemForm";
+import Articles from "./components/Articles";
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
+      <Route path = "/articles" element = {<Articles />}/>
+      
       <Route path = "/" element = {<Home />}/>
       <Route path = "/about" element = {<About />}/>
       <Route path = "/categories" element = {<Categories />}/>
