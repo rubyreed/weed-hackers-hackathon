@@ -12,18 +12,21 @@ const Job = (props) => {
   };
 
   return(
-    <div>
+    <div className = "card">
       <h2>Title: {title}</h2>
       <p>ID:{id} </p>
       <p>Company: {company}</p>
       <p>Salary: {salary}</p>
-      <button onClick = {toggleForm}>
+      <button className = "button">
+      <Link className = "link" to={`/jobs/${id}/items`}>View</Link>
+      </button>
+      <button className="button" onClick = {toggleForm}>
         {showUpdateForm ? "Cancel" : "Update"}
       </button>
       {showUpdateForm && <JobForm id = {id} title = {title} company = {company} salary={salary} updateJob={updateJob} deleteJob={deleteJob}/>}
-      <button onClick={() => deleteJob(id)}>Delete</button>
+      <button className = "button" onClick={() => deleteJob(id)}>Delete</button>
       <br/>
-      <Link to={`/jobs/${id}/items`}>View</Link>
+      
     </div>
   );
 };

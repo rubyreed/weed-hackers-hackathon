@@ -75,6 +75,7 @@ code {
   background-image: url("/src/images/grass.jpg");
   background-size:cover;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  text-shadow: 4px 4px 4px black;
 }
 .items_header{
   /* box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px; */
@@ -86,13 +87,26 @@ code {
   background-image: url("/src/images/plants.jpg");
   background-size:cover;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  text-shadow: 4px 4px 4px black;
+}
+
+.jobs_header{
+  padding:20px;
+  margin-left:200px;
+  margin-right:200px;
+  color:rgb(255, 255, 255);
+  font-size: 3.2em;
+  background-image: url("/src/images/vegetables.jpg");
+  background-size:cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  text-shadow: 4px 4px 4px black;
 }
 
 .add_button{
   font-size:1.5em;
   color:rgb(255, 255, 255);
   background-color:rgb(60, 93, 65);
-  margin-bottom:20px;
+  margin-bottom:100px;
 }
 
 .button{
@@ -106,4 +120,12 @@ code {
   text-decoration: none;
   color:white;
 }
+
+/* .update{
+  border:2px green;
+} */
+
+/* .footer{
+  
+} */
  
