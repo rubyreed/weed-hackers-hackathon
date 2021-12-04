@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import CategoryForm from "./CategoryForm";
 
 const Category = (props) => {
-  const {id, name, description, updateCategory} = props
+  const {id, name, description, updateCategory, deleteCategory} = props
 
   const [showForm, setShowForm] = useState(false);
 
@@ -22,7 +22,8 @@ const Category = (props) => {
       <button onClick = {toggleForm}>
         {showForm ? "Cancel" : "Update"}
       </button>
-      {showForm && <CategoryForm id = {id} name = {name} description = {description} updateCategory = {updateCategory}/>}
+      {showForm && <CategoryForm id = {id} name = {name} description = {description} updateCategory = {updateCategory} deleteCategory={deleteCategory}/>}
+    <button onClick={() => deleteCategory(id)}>Delete</button>
     </div>
   );
 };

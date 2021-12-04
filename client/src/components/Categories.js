@@ -22,12 +22,18 @@ const updateCategory = (changedCategory) => {
 setCategories(updatedCategories)
 };
 
+const deleteCategory = async(id)=>{
+  let response = await axios.delete(`/api/categories/${id}`);
+  let filteredCategories = categories.filter((category) => category.id !==id);
+  setCategories(filteredCategories);
+}
+
 const renderCategories = () => {
   if (categories.length === 0) {
     return <p>No Categories</p>
   }
   return categories.map((category) => {
-    return <Category key = {category.id}{...category}/>;
+    return <Category key = {category.id}{...category} delteCategory = {deleteCategory} updateCategory={updateCategory}/>;
   });
 };
 
