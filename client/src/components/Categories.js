@@ -4,7 +4,7 @@ import axios from "axios";
 import CategoryForm from "./CategoryForm";
 
 const Categories = () => {
-
+  const [showNewForm, setShowNewForm] = useState(false);
 const [categories, setCategories] = useState([]);
 
 useEffect(() => {
@@ -15,6 +15,10 @@ useEffect(() => {
 const getCategories = async() => {
   let response = await axios.get("/api/categories");
   setCategories(response.data)
+};
+
+const toggleNewForm = () => {
+  setShowNewForm(!showNewForm);
 };
 
 const updateCategory = (changedCategory) => {
@@ -33,7 +37,7 @@ const renderCategories = () => {
     return <p>No Categories</p>
   }
   return categories.map((category) => {
-    return <Category key = {category.id}{...category} delteCategory = {deleteCategory} updateCategory={updateCategory}/>;
+    return <Category key = {category.id}{...category} deleteCategory = {deleteCategory} updateCategory={updateCategory}/>;
   });
 };
 
@@ -44,7 +48,8 @@ const displayNewCategory = (category) => {
   return (
     <div>
       <h1>Categories Here</h1>
-      <CategoryForm newestCategory = {displayNewCategory} updateCategory = {updateCategory}/>
+      <button onClick = {toggleNewForm}>{showNewForm ? "Cancel" : "Add"}</button> 
+      {showNewForm && <CategoryForm newestCategory = {displayNewCategory} updateCategory = {updateCategory}/>}
       {renderCategories()}
     </div>
   );
