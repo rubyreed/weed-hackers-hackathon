@@ -64,11 +64,11 @@ const ItemForm = (props) => {
       <h3>Category: {category.name}</h3>
       <form onSubmit ={handleSubmit}>
         <p>Name:</p>
-        <input value={name} onChange={(e)=>setName(e.target.value)}/>
+        <input required value={name} onChange={(e)=>setName(e.target.value)}/>
         <p>Price:</p>
-        <input value={price} onChange={(e)=>setPrice(e.target.value)}/>
+        <input required value={price} onChange={(e)=>setPrice(e.target.value)}/>
         <p>Description:</p>
-        <input style={{width: "50%"}} value={description} onChange={(e)=>setDescription(e.target.value)}/>
+        <input required style={{width: "50%"}} value={description} onChange={(e)=>setDescription(e.target.value)}/>
         <br  />
         <button style ={{marginRight: "5px"}}>{params.category_id ? "Submit Edits" : "Add New Item"}</button>
         <button onClick ={()=>{handleCancel()}}>Cancel</button>
