@@ -1,50 +1,40 @@
-import react from 'react';
-import axios from 'axios';
-import { useParams, useNavigate } from "react-router";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Jobs from './Jobs';
-  
+import { useNavigate, useParams } from "react-router";
+import axios from "axios"
+
 const JobShow = () => {
-    const [jobs, setJobs] = useState([]);
-    const params = useParams();
-    const navigate = useNavigate();
-   
-    useEffect(() => {
-        getJobs();
-      }, []);
+  const [job, setJob]= useState([]);
+  const params = useParams();
+  const navigate = useNavigate();
 
-      const getJobs = async () => {
-        let res = await axios.get(`/api/jobs/${params.id}`);
-        console.log(res.data)
-        setJobs(res.data);
-      };
-      
-      
-      const deleteJob = async (id) => {
-        await axios.delete(`/api/jobs/${params.id}}`);
-        navigate('/jobs')
-        };
+  useEffect(()=>{
+    getData();
+  },[])
 
-      const renderJob = () =>{
-          return (
-            <div key={jobs.id}>
-              <h3>Job Title: {jobs.title}</h3>
-              <p>Company: {jobs.company}</p>
-              <p>Salary: {`${jobs.salary}`}</p>
-              <form>
-              <button>Edit</button>
-
-              <button onClick = {()=>{deleteJob(jobs.id)}}>Delete</button>
-              </form>
-            </div>
-          );
-      };
-
-          return (
-        <div> 
-        {renderJob()}
-        </div>
-      );
+  const getData = async () => {
+      try {
+        let res = await axios.get(`/api/jobs/${params.id}`)
+        setJob(res.data)
+      } catch (err) {
+        alert("err occured getting data")
+      }
   };
+
+  const navigateTo = () => {
+    navigate(`/jobs`)
+  };
+
+  return (
+    <div className ="card">
+      <h1 className = "items-header">Please Apply! We Need Help!</h1>
+      <div>
+        <h3>Position Title: {job.title}</h3>
+        <p>Salary: ${job.salary}</p>
+        <p>Company: {job.company}</p>
+        <button onClick={()=>navigateTo()}>Return to all Jobs</button>
+      </div>
+    </div>
+  );
+};
+
 export default JobShow;
