@@ -23,7 +23,7 @@ const CategoryForm = (props) => {
 
   return(
     <div>
-      <h1>{id ? "Update" : "New"}Category Form</h1>
+      <h1>{id ? "Update" : "New"} Category Form</h1>
       <form onSubmit={handleSubmit}>
       <p>Name:</p>
         <input value = {nameState} onChange = {(e) =>

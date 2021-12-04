@@ -17,6 +17,11 @@ const getCategories = async() => {
   setCategories(response.data)
 };
 
+const updateCategory = (changedCategory) => {
+  let updatedCategories = categories.map((category) => (category.id === changedCategory.id ? changedCategory : category));
+setCategories(updatedCategories)
+};
+
 const renderCategories = () => {
   if (categories.length === 0) {
     return <p>No Categories</p>
@@ -33,7 +38,7 @@ const displayNewCategory = (category) => {
   return (
     <div>
       <h1>Categories Here</h1>
-      <CategoryForm newestCategory = {displayNewCategory}/>
+      <CategoryForm newestCategory = {displayNewCategory} updateCategory = {updateCategory}/>
       {renderCategories()}
     </div>
   );
