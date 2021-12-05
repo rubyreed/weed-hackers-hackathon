@@ -26,6 +26,12 @@ const Items = () => {
     }
   };
 
+  const updateItem = (changedItem) => {
+    let updatedItems = items.map((item) => (item.id === changedItem.id ? changedItem : item));
+    console.log(updatedItems)
+    setItems(updatedItems)
+  };
+
   const deleteItem = async (id) => {
     await axios.delete(`/api/categories/${category.id}/items/${id}`)
     let filteredItems =(items.filter((item)=>item.id !==id))
@@ -36,7 +42,7 @@ const Items = () => {
     if (items){
       return items.map((item)=>{
         return(
-          <Item key ={item.id} category = { category } item = { item } deleteItem = {deleteItem}/>
+          <Item key ={item.id} category = { category } item = { item } deleteItem = {deleteItem} updateItem = {updateItem}/>
         )
       });
     } else {
